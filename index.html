@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Metrics Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <div class="dashboard">
+    <div class="left-panel">
+      <h1 class="app-title"><i class="fas fa-heartbeat"></i> Health Metrics</h1>
+      <p class="app-subtitle">Track your health with our advanced BMI calculator and health assessment tool.</p>
+      
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-calculator"></i>
+          </div>
+          <div class="feature-text">
+            <h3>BMI Calculation</h3>
+            <p>Get accurate BMI results with detailed analysis</p>
+          </div>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="feature-text">
+            <h3>Health Tracking</h3>
+            <p>Monitor your health metrics over time</p>
+          </div>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-bell"></i>
+          </div>
+          <div class="feature-text">
+            <h3>Risk Alerts</h3>
+            <p>Get notified about potential health risks</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="right-panel">
+      <h2>Calculate Your BMI</h2>
+      <p style="margin-bottom: 25px; color: var(--gray);">Enter your details to get your Body Mass Index and health assessment.</p>
+      
+      <div class="input-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        <i class="fas fa-user"></i>
+      </div>
+      
+      <div class="input-group">
+        <label for="weight">Weight (kg)</label>
+        <input type="number" id="weight" placeholder="Enter weight in kg">
+        <i class="fas fa-weight"></i>
+      </div>
+      
+      <div class="input-group">
+        <label for="height">Height (m)</label>
+        <input type="number" id="height" placeholder="Enter height in meters" step="0.01">
+        <i class="fas fa-ruler-vertical"></i>
+      </div>
+      
+      <button id="calculateBtn" class="calculate-btn">
+        <i class="fas fa-calculator"></i> Calculate BMI
+      </button>
+      
+      <div id="results" class="results-container">
+        <div class="results-header">
+          <h3>Results for <span id="resultName">User</span></h3>
+          <div class="bmi-value" id="bmiValue">0.0</div>
+        </div>
+        
+        <div class="bmi-category" id="bmiCategory">-</div>
+        
+        <div class="bmi-scale">
+          <div class="bmi-indicator" id="bmiIndicator"></div>
+          <div class="bmi-marker" style="left: 0%;">Underweight</div>
+          <div class="bmi-marker" style="left: 25%;">Normal</div>
+          <div class="bmi-marker" style="left: 50%;">Overweight</div>
+          <div class="bmi-marker" style="left: 75%;">Obese</div>
+          <div class="bmi-marker" style="left: 100%;">Extreme</div>
+        </div>
+        
+        <div class="risk-indicator" id="riskIndicator">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span id="riskText">No high risk detected</span>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="weightValue">0</div>
+            <div class="stat-label">Weight (kg)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="heightValue">0</div>
+            <div class="stat-label">Height (m)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="./script.js"></script>
+</body>
+</html>
