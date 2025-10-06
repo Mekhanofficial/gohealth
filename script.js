@@ -1,28 +1,22 @@
 document.getElementById("calculateBtn").addEventListener("click", function() {
-      // Get user input
       const personName = document.getElementById("name").value || "Anonymous";
       const weightKg = parseFloat(document.getElementById("weight").value);
       const heightM = parseFloat(document.getElementById("height").value);
 
-      // Validate input
       if (isNaN(weightKg) || isNaN(heightM) || heightM <= 0) {
         alert("Please enter valid weight and height values.");
         return;
       }
 
-      // Perform arithmetic operations
       const heightSquared = heightM * heightM;
       const bmi = weightKg / heightSquared;
 
-      // Perform comparison operations
       const isUnderweight = bmi < 18.5;
       const isNormalWeight = bmi >= 18.5 && bmi < 25;
       const isOverweight = bmi >= 25;
 
-      // Perform logical operations
       const isHighRisk = isOverweight || weightKg > 90;
 
-      // Display in console
       console.log("Name:", personName);
       console.log("Weight (kg):", weightKg);
       console.log("Height (m):", heightM);
@@ -32,13 +26,11 @@ document.getElementById("calculateBtn").addEventListener("click", function() {
       console.log("Overweight:", isOverweight);
       console.log("High Risk Alert:", isHighRisk);
 
-      // Update UI with results
       document.getElementById("resultName").textContent = personName;
       document.getElementById("bmiValue").textContent = bmi.toFixed(2);
       document.getElementById("weightValue").textContent = weightKg;
       document.getElementById("heightValue").textContent = heightM;
       
-      // Set BMI category and color
       let category = "";
       let categoryColor = "";
       let indicatorWidth = 0;
@@ -61,11 +53,9 @@ document.getElementById("calculateBtn").addEventListener("click", function() {
       document.getElementById("bmiCategory").style.background = categoryColor;
       document.getElementById("bmiCategory").style.color = "white";
       
-      // Set BMI indicator position
       document.getElementById("bmiIndicator").style.width = `${indicatorWidth}%`;
       document.getElementById("bmiIndicator").style.background = categoryColor;
       
-      // Set risk indicator
       const riskIndicator = document.getElementById("riskIndicator");
       const riskText = document.getElementById("riskText");
       
@@ -77,6 +67,5 @@ document.getElementById("calculateBtn").addEventListener("click", function() {
         riskText.innerHTML = "<strong>Low Risk:</strong> Your health metrics look good";
       }
       
-      // Show results container
       document.getElementById("results").style.display = "block";
     });

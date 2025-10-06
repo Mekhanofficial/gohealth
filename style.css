@@ -51,7 +51,6 @@
       overflow: hidden;
     }
     
-    /* Create a pseudo-element for the blur effect */
     .left-panel::before {
       content: '';
       position: absolute;
@@ -62,7 +61,7 @@
       background: inherit;
       filter: blur(8px);
       z-index: -1;
-      margin: -20px; /* Extend beyond the container to prevent white edges */
+      margin: -20px;
     }
     
     .right-panel {
